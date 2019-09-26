@@ -1,0 +1,1 @@
+jQuery(document).on('click','#all_cats ul li',function(){var post_id=jQuery(this).attr('post-id');jQuery.ajax({url:ajaxUrlObj.ajax_url,type:'post',data:{action:'getProIndustries',post_id:post_id},success:function(response){var all_indus_cats=jQuery('#all_indus').find('ul');all_indus_cats.empty();all_indus_cats.append(response);}});});

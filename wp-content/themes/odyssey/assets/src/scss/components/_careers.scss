@@ -1,0 +1,615 @@
+.careers{
+	.career-header{
+		@include breakpoint(md){
+			width: 90%;
+			margin: 0 auto;
+		}
+		.see-all-jobs{
+			padding: 0px 0 0 35px;
+			position: relative;
+			margin-bottom: 20px;
+			&:before{
+			    content: '';
+			    display: block;
+			    position: absolute;
+			    width: 22px;
+			    height: 17px;
+			    top: 4px;
+			    left: 0px;
+			    background: url(../../images/arrow-dark-left.svg);
+			    background-repeat: no-repeat;
+			}
+		}
+		.button{
+			position: absolute;
+			left: 100%;
+			margin-left: -235px;
+			top: 87px;
+			@include breakpoint(sm){
+				top: 23px;
+				margin-left: -175px;
+			}
+			
+		}
+	}
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+	.career-carousel{
+		width: 100%;
+		@include breakpoint(md){
+			margin-bottom: 20px;
+		}
+	}
+	.career-wrapper{
+		float: right;
+		width: 90%;			
+		@media (max-width: 1440px){
+			width: 1240px;
+		}
+		@media (max-width: 1380px){
+			width: 1160px;
+		}
+		@media (max-width: 1280px){
+			width: 1060px;
+		}
+		@include breakpoint(dt){
+			width: 960px	
+		}
+		@media (max-width: 960px){
+			width: 100%;
+		}
+		
+	.owl-stage-outer{
+		@include breakpoint(sm){
+			transition: all 0.3s ease;
+			padding-top: 40px;
+			.owl-item.active{
+				transform: scale(1.2);
+				z-index: 10;
+				box-shadow: 0px 7px 24px #020d39;
+			}
+		}
+	}
+		.career-carousel{
+			&:before{
+			    content: '';
+			    display: block;
+			    position: absolute;
+			    width: 245px;
+			    height: 86px;
+			    background: url(../../images/dotted-grid.svg);
+			    top: -27px;
+			    left: 31px;
+			    overflow: hidden;
+			    background-size: 10px;
+			}
+			ul{
+				li{
+				    width: 100%;
+				    height: auto;
+				    overflow: hidden;
+				    margin: 0 auto;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top: -85px;
+				right: 50px;
+			}
+		}
+		.inner-wrapper{
+			width: 1024px;
+			@include breakpoint(lgr){
+				width: 1360px
+			}
+			@include breakpoint(dt){
+				width: 767px
+			}
+			@include breakpoint(md){
+				width: 90%;
+				margin: 0 auto;
+			}
+			section.position-list{
+				padding-top: 0px;
+			}
+		}
+		.blue-2{
+			padding: 100px 0px;
+			&:before{
+				content: '';
+				display: block;
+				width: 100px;
+				position: absolute;
+				right: 100%;
+				top: 0px;
+				bottom: 0px;
+				background: $blue_2;
+			}
+		}
+		.dark-blue{
+			padding: 100px 0px;
+			&:before{
+				content: '';
+				display: block;
+				width: 100px;
+				position: absolute;
+				right: 100%;
+				top: 0px;
+				bottom: 0px;
+				background: $darker_blue;
+			}
+		}
+		.blue{
+			padding: 100px 0px;
+			&:before{
+				content: '';
+				display: block;
+				width: 100px;
+				position: absolute;
+				right: 100%;
+				top: 0px;
+				bottom: 0px;
+				background: $light_blue;
+			}
+		}
+	}
+	
+	.open-positions{
+		padding-top: 50px;
+		.positions-list{
+			margin-top: 60px;
+			li{
+			    display: block;
+			    width: 100%;
+			    position: relative;
+			    border: 1px solid #3a4b88;
+			    height: 128px;
+			    line-height: 124px;
+			    padding: 0 30px;
+			    margin-bottom: 20px;
+			    @include border-radius(10px, 10px, 10px, 10px);
+			    &:hover{
+			    	border-color: $light_green;
+			    } 
+			    @include breakpoint(sm){
+				    height: 90px;
+				    line-height: 92px;
+			    }
+				label{
+					margin: 0px;
+					font-size: 25px;
+					line-height: 44px;
+					color: $white;
+					font-family: 'font-400';
+					@include breakpoint(sm){
+			    		font-size: 20px;
+			    		line-height: 20px;
+			    	}
+				}
+				.button{
+				    margin: 0px;
+				    position: absolute;
+				    right: 30px;
+				    border-width: 2px;
+				    padding: 0 33px 0 33px;
+				    height: 58px;
+				    min-width: 190px;
+				    line-height: 54px;
+				    top: 34px;
+					&:hover{
+						background: $light_green;
+						color: $dark_blue;
+					}
+					&:before{
+						display: none;
+					}
+					@include breakpoint(sm){
+					    font-size: 0px;
+					    width: 56px;
+					    height: 56px;
+					    min-width: 33px;
+					    padding: 0px;
+						top: 50%;
+						transform: translateY(-50%);
+					    &:before{
+						    display: block;
+						    top: 19px;
+						    left: 15px;
+						}
+						&:hover{
+							background: transparent;
+						}
+			    	}
+				}
+			}
+		}
+	}
+
+	.ODC-life{
+		margin-top: 0px;
+		.life-image{
+		    margin-left: 100px;
+		    margin-bottom: -70px;
+		    position: relative;
+		    z-index: 10;
+		    @include breakpoint(sm){
+		    	margin-left: 45px;
+		    }
+			img{
+				width: 100%;
+			}
+		}
+		.inner{
+			background: $blue_2;
+			padding: 170px 0 108px 0;
+			position: relative;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				right: 100%;
+				width: 90px;
+				background: $blue_2;
+			}
+			.title-section{
+				width: 239px;
+				float: left;
+				margin-right: 114px;
+				overflow: hidden;
+			}
+			.description-section{
+				width: 438px;
+				float: left;
+				overflow: hidden;
+			}
+			@include breakpoint(md){
+				padding-left: 45px;
+				.title-section{
+					width: 100%;
+					float: none;
+					margin: 0 0 30px 0px;
+				}
+				.description-section{
+					width: 80%;
+					float: none;
+				}
+			}
+		}
+	}
+
+}
+.our-value{
+	background: $blue_2;
+	&:before, &:after{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		width: 100px;
+		right: 100%;
+		background: $blue_2;
+	}
+	&:after{
+		left: 100%;
+		right: auto;
+		width: 500px;
+	}
+	.features{
+		width: 80%;
+		margin: 0 auto;
+		.feature-wrap{
+			width: 90%;
+			margin: 40px auto 50px auto;
+			.icon-wrapper{
+				margin: 0px;
+				height: 90px;
+			}
+			h4{
+				font-size: 25px;
+				line-height: 44px;
+				font-family: 'font-500';
+				margin-bottom: 25px;
+			}
+		}
+		@include breakpoint(dt){
+			width: 100%;
+		}
+	}
+}
+.aol-wrapper{
+	.well{
+		display: none
+	}
+	.Array, .aol-ad-inner-wrapper{
+		width: 90%;
+		@include breakpoint(lgr){
+			width: 1360px;
+		}
+		@include breakpoint(dt){
+			width: 100%;
+		}
+		.panel.panel-default{
+			background: none;
+		    position: relative;
+		    border: 1px solid #3a4b88;
+		    height: 115px;
+		    line-height: 115px;
+		    padding: 0 30px;
+		    margin-bottom: 20px;
+		    @include border-radius(10px, 10px, 10px, 10px);
+		    @include breakpoint(sm){
+		    	height: 75px;
+		    	line-height: 75px;
+		    }
+			.panel-heading {
+				background: none;
+				margin: 0px;
+			    font-size: 25px;
+			    line-height: 113px;
+			    color: #FFFFFF;
+			    font-family: 'font-500';
+			    border: none;
+			    padding: 0px;
+			    @include breakpoint(sm){
+					font-size: 18px;
+					line-height: 75px;
+			    }
+			}
+			.panel-body {
+				position: absolute;
+				top: 0px;
+				right: 30px;
+				padding: 0px;
+				@include breakpoint(sm){
+					top: -2px;
+				}
+				p{
+					display: none;
+				}
+				a{
+					.button{
+						margin-top: 0px;
+						background: none;
+						height: 56px;
+						min-width: 190px;
+						line-height: 54px;
+						color: $light_green;
+						border: 2px solid $light_green;
+						padding: 0px 37px;
+						&:before {
+					            content: '';
+					            display: inline-block;
+					            vertical-align: middle;
+					            margin-top: -5px;
+					            position: relative;
+					            background: url(../../images/arrow-dark.svg);
+					            background-repeat: no-repeat;
+					            background-position: center;
+					            margin-right: 0px;
+					            height: 20px;
+					            width: 0px;
+					            transition: all 0.2s ease;
+					            opacity: 0;
+					        }
+						&:hover{
+							color: $darker_blue;
+							background: $light_green;
+							&:before {
+				                width: 23px;
+				                transition: all 0.2s ease;
+				                opacity: 1;
+				                margin-right: 15px;
+				            }
+						}
+						@include breakpoint(sm){
+							font-size: 0px;
+							height: 48px;
+							min-width: 48px;
+							padding: 0px;
+							&:before{
+							    display: block;
+							    position: absolute;
+							    background: url(../../images/right-arrow-light-green.svg);
+							    background-repeat: no-repeat;
+							    left: 11px;
+							    top: 19px;
+							    width: 22px;
+							    height: 16px;
+							    transition: all 0.3s ease;
+							    opacity: 1;
+							}
+							&:hover{
+								&:before{
+									background: $light_green url(../../images/arrow-dark.svg);
+								}
+							}
+						}
+						&:focus{
+							outline: none;
+						}
+					}	
+				}
+			}
+			&:hover{
+				border-color: $light_green;
+			}
+		}
+	}
+}
+.apply-job-form{
+	.form-section{
+		width: 50%;
+		float: left;
+		@include breakpoint(dt){
+			width: 60%;
+		}
+		@include breakpoint(md){
+			width: 85%;
+			margin: 0 auto;
+			float: none;
+		}
+
+		.alert-danger{
+			background: $white;
+			font-size: 14px;
+			color: $light_blue ;
+			margin-top: 20px;
+			border:none;
+		}
+		.alert-success{
+			background: none;
+			color: $white ;
+			margin-top: 20px;
+			border: none;
+			font-size: 42px;
+			font-family: 'font-600';
+			margin-top: 0px;
+			padding: 0px;
+			width: 50%;
+			line-height: 50px;
+			@include breakpoint(sm){
+				width: 80%;
+			}
+		}
+		form{
+			margin-left: -15px;
+			.section-header{
+				position: absolute;
+				bottom: 100%;
+				margin-bottom: 20px;
+				top: auto;
+			}
+			p{
+				display: none;
+			}
+			.form-group{
+				padding-left: 15px;
+				padding-right: 15px;
+				margin-bottom: 30px;
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+				@include breakpoint(sm){
+					width: 100%;
+					display: block;
+					&:nth-child(4), &:nth-child(5){
+						width: 50%;
+						display: inline-block;
+					}
+					label{
+						font-size: 14px;
+						line-height: 22px;
+					}
+				}
+				&:nth-child(3){
+					display: block;
+					width: 50%;
+					@include breakpoint(sm){
+						width: 100%;
+					}
+				}
+				input[type="file"]{
+					opacity: 0;
+					width: 204px;
+				}
+				label[for="upload_resume"], label[for="add_coverletter"], label[for="upload_cover"] {
+					&:after{
+					    content: 'Add your file';
+					    position: absolute;
+					    display: block;
+					    border: 1px solid #2a3b7d;
+					    border-style: dashed;
+					    background: #02145e;
+					    padding: 13px 30px;
+					    top: 40px;
+					    cursor: pointer;
+					    cursor: pointer;
+					    z-index: 10;
+					    @include border-radius(5px, 5px, 5px, 5px);
+					    @include breakpoint(xs){
+					    	padding: 13px 13px;
+					    	font-size: 12px;
+					    }
+					}
+				}
+				span{
+					margin-top: 10px;
+					font-size: 12px;
+					opacity: 0.7;
+					&.required-mark{
+						display: none;
+					}
+				}
+			}
+			.btn.btn-primary{
+				height: 56px;
+			    text-align: center;
+			    cursor: pointer;
+			    line-height: 56px;
+			    border: 1px solid transparent;
+			    color: $white;
+			    margin-top: 35px;
+			    font-size: 18px;
+			    font-family: 'font-500';
+			    font-weight: normal;
+			    margin-left: 15px;
+			    @include border-radius(30px, 30px, 30px, 30px);
+			    background: $light-green;
+		        color: $dark_blue;
+		        padding: 0 33px 0 33px;
+		        &:hover {
+		            background: none;
+		            border-color: $light-green;
+		            color: $light-green;
+		        }
+		        &:focus{
+		        	outline: none;
+		        }
+			}
+		}
+	}
+	.right-obj{
+		float: right;
+		margin-right: 10%;
+		margin-top: 30px;
+	}
+}
+#apply_for_position{
+	padding-top: 120px;
+	.dotted-circle{
+		width: 320px;
+		height: 320px;
+		@include breakpoint(lgr){
+			width: 450px;
+			height: 450px;
+		}
+		@include breakpoint(dt){
+			width: 300px;
+			height: 300px;
+			margin-right: 35px;
+		}
+		@include breakpoint(md){
+			display: none;
+		}
+	}
+}
+.view-all-positions{
+	@include breakpoint(md){
+		width: 90%;
+		margin: 0 auto;	
+		.button{
+			margin-top: 0px;
+		}
+	}
+	
+
+}

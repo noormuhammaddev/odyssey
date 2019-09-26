@@ -1,0 +1,316 @@
+.processes-wrapper {
+    .steps-wrapper {
+        position: relative;
+        padding-top: 0px;
+        text-align: center;
+        @include breakpoint(sm){
+            text-align:left;
+        }
+        .circle-wrapper {
+            width: 680px;
+            height: 222px;
+            margin: 0 auto;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            @include breakpoint(md){
+                height: 182px;
+                width: 420px;
+                margin-top: 20px;
+            }
+            @include breakpoint(sm){
+                display: none;
+            }
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 1;
+                height: 1px;
+                background: url(../../images/Process-line.png);
+                left: -50px;
+                right: -50px;
+                top: 137px;
+                opacity: 0.4;
+            }
+            .left-c, .right-c{
+                width: 65px;
+                height: 65px;
+                border: 2px solid $white;
+                opacity: 0.07;
+                position: absolute;
+                left: -27px;
+                top: 107px;
+                @include border-radius(100%, 100%, 100%, 100%);
+                @include breakpoint(md){
+                    width: 45px;
+                    height: 45px;
+                    top: 115px;
+                    left: -34px;
+                }
+            }
+            .right-c{
+                right: -18px;
+                left: auto;
+                @include breakpoint(md){
+                    right: -28px;
+                }
+            }
+        }
+        ul {
+            border-top: 2px solid $light-blue;
+            padding-top: 0px;
+            text-align: center;
+            @include breakpoint(sm){
+                display: none;
+            }
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                min-height: 68px;
+                padding-top: 23px;
+                width: 200px;
+                position: relative;
+                cursor: pointer;
+                @include breakpoint(md){
+                    width: 142px;
+                }
+                &:nth-child(1) {
+                    z-index: 10;
+                }
+                &:nth-child(2) {
+                    z-index: 9;
+                }
+                &:nth-child(3) {
+                    z-index: 10;
+                }
+                &:nth-child(4) {
+                    z-index: 8;
+                }
+                span {
+                    &.step {
+                        color: $lighter_blue;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        padding: 0 0 0 0;
+                        transition: all 0.3s ease;
+                        @include breakpoint(md){
+                            font-size: 14px;
+                        }
+                    }
+                    &.circle {
+                        border: 1.5px solid $lighter_blue;
+                        border-style: dashed;
+                        width: 222px;
+                        height: 222px;
+                        position: absolute;
+                        top: -280px;
+                        transition: all 0.3s ease !important;
+                        background: rgba(4, 15, 65, 0.6);
+                        @include border-radius(100%, 100%, 100%, 100%);
+                        @include breakpoint(md){
+                            width: 142px;
+                            height: 142px;
+                            top: -200px;
+                        }
+                        &.c1 {
+                            width: 182px;
+                            height: 182px;
+                            left: 74px;
+                            top: -255px;
+                            @include breakpoint(md){
+                                width: 102px;
+                                height: 102px;
+                                top: -175px;
+                                left: 79px;
+                            }
+                        }
+                        &.c2 {
+                            left: -10px;
+                             @include breakpoint(md){
+                                left: 8px;
+                            }
+                        }
+                        &.c3 {
+                            left: -17px;
+                        }
+                        &.c4 {
+                            width: 182px;
+                            height: 182px;
+                            left: -62px;
+                            top: -255px;
+                            @include breakpoint(md){
+                                width: 102px;
+                                height: 102px;
+                                top: -175px;
+                                left: -45px;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    /* z-index: 11; */
+                    span {
+                        &.step {
+                            transform: scale(1.2);
+                            color: $white;
+                        }
+                        &.circle {
+                            background-image: linear-gradient(to top, rgba(60, 113, 255, 0.7), rgb(3, 21, 97));
+                            transition: all 0.3s ease;
+                            border: 2px solid #1fa8fe;
+                            transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+        .steps-description-container {
+            min-height: 100px;
+            margin-bottom: 15px;
+            .steps-description {
+                width: 680px;
+                margin: 0 auto;
+                color: $white;
+                font-size: 18px;
+                margin-top: 50px;
+                font-family: 'font-300';
+                text-align: center;
+                display: none;
+                h4{
+                    display: none;
+                }
+                @include breakpoint(sm){
+                    width: auto;
+                    text-align: left;
+                    display: block;
+                    &:after{
+                        content: '';
+                        display: block;
+                        width: 96px;
+                        height: 2px;
+                        background: #1c3d9a;
+                        margin-top: 50px;
+                    }
+                    h4{
+                        display: block;
+                        font-size: 22px;
+                        font-family: 'font-500';
+                    }
+                }
+                &.shown{
+                    display: block;
+                }
+                &#c4_content{
+                    &:after{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .steps-container {
+        width: 680px;
+        margin: 0 auto;
+        .circle {
+            @include border-radius (100%, 100%, 100%, 100%);
+            border: 1px solid #CCC;
+            &.first {
+                width: 60px;
+                height: 60px;
+                border: 1px solid #FFF;
+            }
+        }
+    }
+}
+.our-processes{
+    .process-header{
+        padding-bottom: 0px;
+        .object{
+            width: 495px;
+            height: 360px;
+            background: url(../../images/process-object.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .section-header{
+            float: left;
+            padding: 60px 0;
+        }
+    }
+}
+.processes-contain{
+    section.associated{
+        margin-bottom: 100px;
+        margin-right: -49.3%;
+        .inner-section{
+            margin-bottom: 60px;
+            h3{
+                width: 239px;
+                float: left;
+                font-family: 'font-600';
+                font-size: 25px;
+                line-height: 44px;
+            }
+            .more-desc{
+                width: 460px;
+                float: left;
+                margin-left: 80px;
+                h4{
+                    font-size: 30px;
+                    line-height: 44px;
+                    margin-bottom: 30px;
+                }
+            }
+
+        }
+    }
+    .step-number{
+        padding-top: 100px;
+        padding-left: 14px;
+        margin-bottom: 30px;
+        position: relative;
+        font-size: 18px;
+        color: #91A7D3;
+        text-transform: uppercase;
+        span{
+            &.circle{
+                position: absolute;
+                width: 47.51px;
+                height: 47.51px;
+                background: url(../../images/dotted-circle-sm.svg);
+                top: 90px;
+                left: 0px;
+            }
+            &.lbl{
+                position: relative;
+                z-index: 10;
+                font-family: 'font-500';
+            }
+        }
+    }
+    .img-lg{
+        position: relative;
+        margin-top: 120px;
+        margin-left: 80px;
+        margin-bottom: -70px;
+        z-index: 10;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 208px;
+            height: 204px;
+            background: url(../../images/repeat-grid.svg);
+            bottom: 100%;
+            left: 0px;
+            right: 0px;
+            margin: 0px auto -123px auto;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}

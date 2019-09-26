@@ -1,0 +1,785 @@
+.blog{
+	overflow-x: hidden;
+	.show-me-strip{
+		position: relative;
+		z-index: 100;
+		.founded-result-subtitle{
+			margin-top: -55px;
+			color: #8aa0cd;
+		}
+		h2{
+			font-size: 38px;
+			line-height: 72px;
+			color: #F6F4FF;
+			font-family: 'font-600';
+			display: inline-block;
+			margin-bottom: 50px;
+			padding-right: 38px;
+			cursor: pointer;
+			@include breakpoint(lgr){
+				margin-bottom: 50px;
+			}
+			@include breakpoint(sm){
+				margin-bottom: 30px;
+			}
+			&:after{
+				content: '';
+				display: inline-block;
+				position: absolute;
+				top: 29px;
+				width: 24px;
+				height: 14.3px;
+				background: url(../../images/down-arrow.svg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin-left: 20px;
+			}
+			&.open{
+				&:after{
+					transform: rotate(-180deg);
+				}
+			}
+			span{
+				color: #5BF5D0;
+				font-family: 'font-600';
+			}
+			&#search_keywords_wrapper{
+				cursor: default;
+				&:after{
+					display: none !important;
+				}
+			}
+		}
+		.post-search-control{
+			width: 338px;
+			position: absolute;
+			right: 0px;
+			top: 3px;
+			#clear_search{
+			    font-family: 'font-300';
+			    text-transform: uppercase;
+			    font-size: 11px;
+			    position: absolute;
+			    top: 9px;
+			    right: 5px;
+			    cursor: pointer;
+			    padding: 10px 10px 10px 10px;
+			}
+			@include breakpoint(md){
+				top: -15px;
+			}
+			@include breakpoint(sm){
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				width: 100%;
+				background: $light_blue;
+				z-index: 1000000000;
+				padding: 0 40px 0 40px;
+				height: 0;
+				padding-top: 0;
+				overflow: hidden;
+				opacity: 0;
+				transition: all 0.2s ease;
+				&.show{
+					opacity: 1;
+					height: 172px;
+					padding-top: 54px;
+					transition: all 0.2s ease;
+					&:after{
+						content: '';
+						display: block;
+						position: fixed;
+						top: 172px;
+						left: 0px;
+						bottom: 0px;
+						right: 0px;
+						background: rgba(3, 21, 97, 0.9);
+					}
+					&.withoutMask{
+						&:after{
+							display: none;
+						}
+					}
+				}
+				.control{
+					background: $light_blue url(../../images/search.svg);
+					background-repeat: no-repeat;
+					background-position: left center;
+					font-size: 30px;
+					background-size: 30px;
+					border: none;
+					color: $white;
+					padding-left: 52px;
+					&:hover, &:focus{
+						color: $white;
+						box-shadow: none;
+					}
+				}
+				.close-nav{
+					position: absolute;
+					z-index: 10;
+				}
+
+			}
+		}
+		@include breakpoint(dt){
+			h2{
+				&:after{
+					top: auto;
+					bottom: 23px;
+					right: 0px;
+				}
+				span{
+					display: block;
+				}
+			}
+		}
+		@include breakpoint(md){
+			h2{
+			    font-size: 36px;
+			    line-height: 48px;
+			    &:after{
+			    	bottom: 15px;
+			    }
+			}
+		}
+
+		.search-navigator{
+			background: url(../../images/search.svg);
+			width: 28px;
+			height: 28px;
+			position: fixed;
+			top: 22px;
+			right: 100px;
+			z-index: 100000000;
+			display: none;
+			cursor: pointer;
+			@include breakpoint(sm){
+				display: block;
+			}
+		}
+	}
+	.category-list{
+		ul{
+			width: 1110px;
+			position: relative;
+			@include breakpoint(dt){
+				width: 100%;
+			}
+			li{
+			    display: inline-block;
+			    color: #F6F4FF;
+			    vertical-align: top;
+			    width: 320px;
+			    margin-right: 37px;
+			    margin-bottom: 28px;
+			    cursor: pointer;
+			    @include breakpoint(dt){
+				    width: 250px;
+		    	}
+		    	@include breakpoint(md){
+		    		width: 40%;
+		    	}
+
+		    	@include breakpoint(xs){
+		    		width: 100%;
+		    		display: block;
+		    		float: left;
+		    		margin-right: 0px;
+		    	    margin-bottom: 12px;
+		    	}
+			    span.count{
+			    	font-size: 16px;
+			    	opacity: 0.5;
+			    	margin-left: 10px;
+			    	position: absolute;
+			    	@include breakpoint(xs){
+			    		margin-left: 5px;
+			    	}
+			    }
+			    &.active{
+			    	color: #5BF5D0;
+			    }
+			    &:last-child{
+			    	position: absolute;
+			    	right: 0px;
+			    	top: 0px;
+			    	width: auto;
+			    	@include breakpoint(dt){
+					    right: 0;
+					    position: relative;
+					    display: block;
+			    	}
+			    }
+			}
+		}
+	}
+	.posts-wrapper, .after-search, {
+		border: none;
+	    margin-top: 105px;
+	    margin-left: -25px;
+	    margin-right: -25px;
+		@include breakpoint(xs){
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+	}
+}
+.post-grid{
+	width: 49%;
+	float: left;
+	margin-bottom: 100px;
+	position: relative;
+	padding-left: 265px;
+	min-height: 250px;
+	padding-right: 30px;
+	@include breakpoint(md){
+		padding-left: 0px;
+		width: 50%;
+		margin-bottom: 55px;
+		padding-left: 15px;
+		padding-right: 25px;
+	}
+	@include breakpoint(xs){
+		padding-left: 15px;
+		padding-right: 15px;
+		min-height: auto;
+		margin-bottom: 30px;
+	}
+	&:nth-child(odd){
+		@include breakpoint(xs){
+			padding-right: 7.5px;
+		}
+	}
+	&:nth-child(even){
+		float: right;
+
+		@include breakpoint(xs){
+			padding-left: 7.5px;
+		}
+	}
+	.thumbnail-wrapper{
+		width: 237px;
+		height: 237px;
+		overflow: hidden;
+		position: absolute;
+		display: block;
+		left: 0px;
+		top: 0px;
+		@include breakpoint(md){
+			position: relative;
+			margin-bottom: 25px;
+		}
+		@include breakpoint(xs){
+		    width: 100%;
+		    height: auto;
+		}
+		img{
+			width: 100%;
+		}
+	}
+	.post-content{
+		.category-name{
+			font-size: 18px;
+			color: $light_green;
+			@include breakpoint(xs){
+				font-size: 13px;
+			}
+			a{
+				font-size: 18px;
+				color: $light_green;
+				@include breakpoint(xs){
+					font-size: 13px;
+				}
+			}
+		}
+		h3{
+			color: $half_white;
+			font-size: 25px;
+			line-height: 32px;
+			font-family: 'font-500';
+			margin: 5px 0 10px 0;
+			@include breakpoint(md){
+				font-size: 18px;
+				line-height: 28px;
+			}
+			@include breakpoint(xs){
+				font-size: 16px;
+				line-height: 1.5
+			}
+		}
+		.reading-time{
+			margin-left: -4px;
+		}
+		.reading-time, .date{
+			color: $light;
+			font-size: 18px;
+			@include breakpoint(xs){
+				font-size: 13px;
+				line-height: 1.5;
+			}
+		}
+		.author{
+			margin-top: 25px;
+			color: #DFEEFD;
+			font-size: 20px;
+			font-family: 'font-400';
+			text-transform: capitalize;
+		}
+	}
+}
+.after-search{
+	display: none;
+}
+.slider-cover{
+		&:before, &:after{
+			content: '';
+			display: block;
+			position: absolute;
+		}
+		&:before{
+		    width: 260px;
+		    height: 42px;
+		    background: url(../../images/dotted-grid.svg);
+		    top: -18px;
+		    right: 15px;
+		    background-size: 10px;
+		    @include breakpoint(sm){
+				background: $darker_blue;
+				right: 100%;
+				top: 0px;
+				bottom: 0px;
+				height: 100%;
+		    }
+		
+		}
+		&:after{
+			left: 100%;
+			top: 0px;
+			bottom: 0px;
+			width: 500px;
+			background: $darker_blue;
+		}
+	.blog-slider{
+		background: $darker_blue;
+	    margin-bottom: 65px;
+	    overflow: hidden;
+	    margin-top: -45px;
+	    .owl-stage-outer{
+	    	margin-bottom: -30px;
+	    }
+		.slider-block{
+			height: 518px;
+			position: relative;
+				padding: 60px 0 0 580px;
+			@include breakpoint(lgr){
+				height: 618px;
+				padding: 60px 0 0 680px;
+			}
+			@include breakpoint(dt){
+			    height: 438px;
+			    padding: 60px 0 0 500px;
+			}
+			@include breakpoint(md){
+			    height: 365px;
+			    padding: 40px 0 0 415px;
+			}
+			@include breakpoint(sm){
+			    height: auto;
+			    padding: 60px 0px 0px 0px;
+			}
+			.image{
+				width: 542px;
+				height: 518px;
+				overflow: hidden;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				@include breakpoint(lgr){
+					width: 642px;
+				    height: 618px;
+				}
+				@include breakpoint(dt){
+				    width: 462px;
+				    height: 438px;
+				}
+				@include breakpoint(md){
+					width: 382px;
+					height: 358px;
+				}
+				@include breakpoint(sm){
+				    height: auto;
+				    width: 100%;
+				    position: relative;
+				}
+				img{
+					width: 100%;
+					min-height: 100%;
+				}
+			}
+			.content-area{
+				width: 100%;
+				@include breakpoint(md){
+					width: 80%;
+					margin-bottom: 35px;
+				}
+				.category-name{
+					color: $light_green;
+					text-transform: uppercase;
+					font-size: 18px;
+					margin-bottom: 20px;
+					overflow: hidden;
+					@include breakpoint(dt){
+						margin-bottom: 10px;
+					}
+				}
+				h3{
+					font-size: 45px;
+					line-height: 48px;
+					font-family: 'font-500';
+					margin-bottom: 10px;
+					overflow: hidden;
+					a{
+						color: $half_white;
+					}
+					@media (max-width: 1399px){
+						font-size: 34px;
+						line-height: 42px;
+					}
+					@include breakpoint(dt){
+						font-size: 28px;
+						line-height: 32px;
+					}
+				}
+				.read-time{
+					margin-left: -4px;
+				}
+				.read-time, .date{
+				    color: #91A7D3;
+					font-size: 18px;
+					overflow: hidden;
+				}
+				.author-name{
+				    margin-top: 25px;
+				    color: #DFEEFD;
+				    font-size: 20px;
+				    font-family: 'font-400';
+				    text-transform: capitalize;
+				    overflow: hidden;
+				}
+				
+			}
+		}
+	}
+}
+.blog-slider{
+	.owl-carousel{
+		/* transform: rotate(90deg); */
+	  	.slider-block{
+		    /* transform: rotate(-90deg); */
+		}
+		.owl-nav{
+		    position: absolute;
+		    bottom: 20px;
+		    right: 0px;
+		    @include breakpoint(sm){
+		    	left: 0px;
+		    	margin: 0 auto;
+		    	width: 70px;
+		    }
+		}
+		.owl-nav .owl-prev, .owl-nav .owl-next{
+			font-size: 36px;
+		    width: 30px;
+		    height: 30px;
+		    margin-right: 5px;
+		    outline: none;
+		}
+	}
+  
+} 
+.blog-detail-header{
+	width: 906px;
+	margin-bottom: 80px;
+	@include breakpoint(md){
+		width: 80%;
+	}
+	@include breakpoint(sm){
+		width: 100%;
+	}
+	ul{
+		li{
+			a{
+			    color: #79F2C0;
+			    text-transform: uppercase;
+			    font-size: 18px;
+			    margin-bottom: 20px;
+			    margin-right: 20px;
+			}
+		}
+	}
+	h1.entry-title{
+		font-size: 45px;
+		line-height: 60px;
+		font-family: 'font-400';
+		margin-bottom: 37px;
+		@include breakpoint(sm){
+			font-size: 34px;
+			line-height: 1.5;
+		}
+	}
+	.brief-description{
+		width: 78%;
+		.rt-reading-time{
+			display: none !important;
+		}
+	}
+	.entry-meta{
+		font-weight: normal;
+		text-transform: capitalize;
+		.reading-time, .date{
+			color: $light;
+			font-size: 18px;
+		}
+		.author-name{
+			margin-top: 25px;
+			color: #DFEEFD;
+			font-size: 20px;
+			font-family: 'font-400';
+		}
+	}
+}
+.featured-image{
+	margin-bottom: 60px;
+	img{
+		width: 100%;
+	}
+}
+.entry-content{
+	.rt-reading-time{
+		display: none !important;
+	}
+	.addtoany_content{
+		width: 700px;	
+		margin-left: 170px;
+		position: relative;
+		height: 71px;
+		margin-top: 70px;
+		@include breakpoint(md){
+			width: auto;
+		}
+		@include breakpoint(sm){
+			margin-left: 65px;
+		}
+		@include breakpoint(xs){
+		    margin-left: 0px;
+		    margin-bottom: 30px;
+		}
+		.a2a_kit{
+		    line-height: 20px;
+		    border-left: 1px solid #1f3074;
+		    height: 77px;
+		    padding-left: 24px;
+		    padding-top: 35px;
+		    position: absolute;
+		    right: 0;
+		    width: auto;
+		    left: auto;
+		    font-family: 'font-300';
+		    &:before{
+		    	content: 'share';
+		    	display: block;
+		    	position: absolute;
+		    	margin: 0px 0 0 5px;
+			    top: 3px;
+			    font-size: 14px;
+			    text-transform: uppercase;
+			    font-family: 'font-400';
+			    color: #7e95c4;
+		    }
+		    a{
+				cursor: pointer;
+				border: 1px solid $white;
+				border-radius: 100%;
+				width: 38px;
+				height: 38px;
+				text-align: center;
+				line-height: 44px;
+				margin: 0 5px;
+				opacity: 0.5;
+				&:hover{
+					border-color: $white;
+					opacity: 1;
+				}
+				&:focus{
+					outline: none;
+				}
+		    }
+		}
+	}
+	p{
+		width: 700px;	
+		margin-left: 170px;
+		@include breakpoint(md){
+			width: auto;
+		}
+		@include breakpoint(sm){
+			margin-left: 65px;
+		}
+		@include breakpoint(xs){
+		    margin-left: 0px;
+		    margin-bottom: 30px;
+		}
+		a{
+			color: $white;
+		    text-decoration: underline;
+		    font-family: 'font-500';
+		    box-shadow: none;
+		    font-weight: normal;
+			&:hover, &:focus{
+				color: $white;
+				box-shadow: none;
+			}
+		}
+	}
+	h1, h2, h3, h4, h5, h6, ul{
+		width: 700px;	
+		margin-left: 170px;
+		font-family: 'font-500';
+		margin-top: 50px;
+    	margin-bottom: 20px;
+    	@include breakpoint(md){
+			width: auto;
+		}
+		@include breakpoint(sm){
+			margin-left: 65px;
+		}
+		@include breakpoint(xs){
+		    margin-left: 0px;
+		    margin-bottom: 15px;
+		}
+
+	}
+	h2{
+		font-size: 32px;
+	}
+	h3{
+		font-size: 25px;
+	}
+	h4{
+		font-size: 22px; 
+	}
+	ul{
+		margin-top: 0 ;
+		margin-bottom: 0px;
+		li{
+			display: block;
+			margin-bottom: 8px;
+			a{
+				color: $half_white;
+				display: inline-block;
+				text-decoration: underline;
+				box-shadow: none;
+				&:hover{
+					color: $light_green;
+					text-decoration: none;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+	.wp-block-image{
+		margin: 60px 0px;
+		text-align: center;
+		display: block;
+		img{
+			width: 100%;
+
+		}	
+	}
+}
+.useful-articles{
+    border-top: 1px solid #1f3074;
+    margin: 45px 0 20px 0;
+    padding-top: 30px;
+	h3{
+		font-size: 50px;
+		line-height: 72px;
+		font-family: 'font-500';
+		margin: 45px 0px;
+	}
+}
+.explore-categories{
+	margin: 0px 0px 100px 0px;
+	&:before{
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    width: 260px;
+	    height: 42px;
+	    background: url(../../images/dotted-grid.svg);
+	    background-size: 10px;
+	    bottom: -28px;
+	    right: -35px;
+		}
+	h4{
+		margin-bottom: 25px;
+	}
+	.categories-wrapper{
+		background: $darker_blue;
+		padding: 66px 88px 56px 88px;
+		@include breakpoint(md){
+			padding: 66px 50px 56px 50px;
+		}
+		@include breakpoint(sm){
+		    padding: 46px 25px 36px 25px;
+		    margin: 0 -15px 0 -15px;
+		}	
+		ul{
+			padding-left: 220px;
+			@include breakpoint(md){
+				padding-left: 150px;
+			}
+			@include breakpoint(sm){
+				padding-left: 0px;
+			}
+			li{
+			    display: inline-block;
+			    color: $half_white;
+			    vertical-align: top;
+			    width: 45%;
+			    
+			    margin-bottom: 12px;
+			    cursor: pointer;
+			    &:first-child {
+				    position: absolute;
+				    left: 0;
+				    top: 0px;
+				    width: auto;
+				    @include breakpoint(sm){
+				    	width: 45%;
+				    	position: static;
+				    }
+				}
+				a{
+					font-family: 'font-300';
+					span.count {
+					    font-size: 16px;
+					    opacity: 0.5;
+					    margin-left: 20px;
+					    @include breakpoint(md){
+							margin-left: 5px;
+						}
+					}
+					&:hover{
+						.category-name{
+							color: $light_green;
+						}
+					}
+				}
+			}
+		}
+	}
+}

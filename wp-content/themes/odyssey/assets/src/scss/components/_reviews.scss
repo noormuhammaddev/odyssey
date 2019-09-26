@@ -1,0 +1,273 @@
+.rev {
+    background: $light_green;
+}
+.reviews-conainer{
+    background: $darker_blue;
+    margin-top: 70px;
+    @include breakpoint(xs){
+        padding-bottom: 130px;
+    }
+    a.button{
+        position: absolute;
+        right: 0px;
+        margin: 0;
+        top: 13px;
+        z-index: 100;
+        width: 250px;
+        @include breakpoint(xs){
+            top: auto;
+            bottom: -70px;
+            left: 0px;
+            margin: 0 auto;
+        }
+    }
+    span.layred-circle{
+        display: block;
+        position: absolute !important;
+        width: 200px;
+        height: 200px;
+        background: url(../../images/circle-3-layer.png);
+        background-size: cover;
+        top: -99px;
+        right: 30px;
+        @include breakpoint(sm){
+            width: 150px;
+            height: 150px;
+            top: -139px;
+        }
+    }
+    .reviews{
+        max-width: 890px;
+        margin: 0 auto;
+        ul{
+            &:after{
+                content: '';
+                display: table;
+                clear: both;
+            }
+            li{
+                width: 100%;
+                position: relative;
+                /* &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1px;
+                    background-color: #5a6698;
+                    height: 180px;
+                    top: 50%;
+                    right: -2px;
+                    transform: translateY(-30%);
+                    @include breakpoint(sm){
+                        display: none;
+                    }
+                
+                } */
+                span.commas{
+                    display: block;
+                    width: 70px;
+                    height: 50px;
+                    background: url(../../images/comma.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    opacity: 0.3;
+                    margin-left: -40px;
+                    @include breakpoint(sm){
+                        margin-left: -7px;
+                    }
+                }
+                .review-wrapper{
+                    max-width: 890px;
+                    margin: 0 auto;
+                    padding: 0 33px;
+                    @include breakpoint(sm){
+                        padding: 0px;
+                    }
+                    &:after{
+                        content: '';
+                        display: table;
+                        clear: both;
+                    }
+                    .review-detail{
+                        font-size: 18px;
+                        line-height: 27px;
+                        color: $half_white;
+                        margin: 45px 0 50px 0 ;
+                        position: relative;
+                    }
+                    .cutomer-info{
+                        position: relative;
+                        padding: 0 0 0 100px;
+                        .cutomer-img, .cutomer-company-img{
+                            width: 80px;
+                            height: 80px;
+                            position: absolute;
+                            text-align: center;
+                            overflow: hidden;
+                            left: 0px;
+                            top: 0px;
+                            @include border-radius(100%, 100%, 100%, 100%);
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .cutomer-company-img{
+                            left: 30px;
+                        }
+                        .cutomer-detail{
+                            span{
+                                font-size: 16px;
+                                display: block;
+                                font-family: 'font-300';
+                                &:first-child{
+                                    font-size: 18px;
+                                    font-family: 'font-600';
+                                }
+                                &.designation{
+                                    color: #0071f9;
+                                }
+                            }
+                            a{
+                                font-size: 15px;
+                                position: relative;
+                                padding-left: 25px;
+                                font-family: 'font-300';
+                                display: inline-block;
+                                &:before{
+                                    content: '';
+                                    position: absolute;
+                                    display: block;
+                                    background: url(../../images/right-arrow.svg);
+                                    background-repeat: no-repeat;
+                                    width: 14px;
+                                    height: 10px;
+                                    top: 7px;
+                                    left: 0px;
+                                    transition: all 0.5s ease;
+                                }
+                                &:hover{
+                                    &:before{
+                                        transform: translateX(6px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .owl-nav{
+                text-align: right;
+                margin: 0 auto;
+                padding: 0px;
+                margin-top: -68px;
+                float: right;
+                position: relative;
+                z-index: 10;
+                @include breakpoint(sm){
+                    margin-top: 40px;
+                    float: none;
+                    text-align: center;
+                    button {
+                        span{
+                            width: 65px;
+                            height: 65px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+.morecontent {
+    span{
+        display: none;
+    }
+    .morelink{
+        background: url(../../images/read-more-dots.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: 0px;
+        width: 44px;
+        height: 23px;
+        vertical-align: middle;
+        border: none;
+        &:hover, &:focus{
+            outline: none;
+        }
+        &.less{
+            background: url(../../images/read-more-less.svg);
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+    }
+
+}
+
+/*****************************************/
+/* Soft Scale */
+/*****************************************/
+.fxSoftScale{
+    .animated{
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
+}
+
+.fxSoftScaleOutNext {
+    animation-name: scaleUp;
+}
+
+.fxSoftScaleInNext {
+    animation-name: scaleDownUp;
+}
+
+.fxSoftScaleOutPrev {
+    animation-name: scaleDown;
+}
+
+.fxSoftScaleInPrev {
+    animation-name: scaleUpDown;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleDownUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    from {}
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes scaleUpDown {
+    from {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

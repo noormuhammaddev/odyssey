@@ -1,0 +1,27 @@
+@charset "UTF-8";
+//helper
+@import "helpers/_variables";
+//mixins
+@import "helpers/_mixins";
+
+//libraries
+@import "components/libraries/_bootstrap.min";
+@import "components/libraries/_owl.carousel.min";
+
+
+//components
+@import "components/_normalize";
+@import "components/_animation";
+@import "components/_common";
+@import "components/_about";
+@import "components/_footer";
+@import "components/_header";
+@import "components/_processes";
+@import "components/_projects";
+@import "components/_reviews";
+@import "components/_top_banner";
+@import "components/_services";
+@import "components/_RND";
+@import "components/_contact";
+@import "components/_blog";
+@import "components/_careers";

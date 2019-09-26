@@ -1,0 +1,260 @@
+.contact-wrapper{
+	.contact{
+		@include breakpoint(md){
+			padding-top: 0px;
+		}
+	}
+	.contact-form{
+		float: left;
+		width: 500px;
+		@include breakpoint(lgr){
+			width: 700px;
+		}
+		@include breakpoint(md){
+			float: none;
+			width: 90%;
+		}
+		@include breakpoint(sm){
+			width: 100%;
+		}
+	}
+	.dotted-circle{
+		float: right;
+	    margin-top: 110px;
+	    width: 350px;
+	    height: 350px;
+	    @include breakpoint(lgr){
+			width: 455px;
+			height: 455px;
+		}
+		@include breakpoint(md){
+			margin-top: 20px;
+			width: 280px;
+	    	height: 280px;
+	    	margin-bottom: 45px;
+		}
+	}
+	.section-header{
+		width: 68%;
+	}
+	.contact-form{
+		.wpcf7-form-control-wrap{
+			display: block;
+			width: 100%;
+		}
+		.form-group{
+			margin-bottom: 35px;
+		}
+	}
+	.contact-info-wrapper{
+	    position: relative;
+	    margin-bottom: 160px;
+		&:after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+		.left{
+			width: 60%;
+			float: left;
+			padding: 95px 0px; 
+			background: $darker_blue;
+			position: relative;
+			&:before, &:after{
+				content: '';
+				display: none;
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				right: 100%;
+				background: $darker_blue;
+				width: 500px;
+			}
+
+			&:before{
+				display: block;
+			}
+			@include breakpoint(md){
+				width: 100%;
+				float: none;
+				&:after{
+					left: 100%;
+					display: block;
+				}
+			}
+			.inner{
+				width: 405px;
+				@include breakpoint(md){
+					width: 85%;
+					margin: 0 auto;
+				}
+				h3{
+					font-size: 50px;
+					line-height: 72px;
+					overflow: hidden;
+					span{
+						font-family: 'font-500';
+					}
+					@include breakpoint(sm){
+						font-size: 34px;
+						line-height: 1.5;
+					}
+				}
+				.address{
+					font-size: 22px;
+					line-height: 34px;
+					color: #F6F4FF;
+				    font-family: 'font-500';
+				    padding-left: 53px;
+				    margin: 75px 0 60px 0;
+				    span{
+				    	line-height: normal;
+				    }
+				    & > span{
+				    	overflow: hidden;
+				    	line-height: normal;
+				    }
+					&:before{
+						content: '';
+						display: block;
+						position: absolute;
+						width: 33.05px;
+						height: 45.3px;
+						background: url(../../images/map-marker.svg);
+						background-repeat: no-repeat;
+						left: 0px;
+						top: 7px;
+					}
+					@include breakpoint(md){
+						width: 80%;
+					}
+					@include breakpoint(sm){
+						width: 100%;
+						margin: 35px 0 35px 0
+					}
+				}
+			}
+		}
+		.right{
+			width: 50%;
+			position: absolute;
+			right: 0px;
+			bottom: -88px;
+			background: #CCC;
+			&:before{
+			    content: '';
+			    display: block;
+			    position: absolute;
+			    width: 340px;
+			    height: 22px;
+			    background: url(../../images/dotted-grid.svg);
+			    top: -26px;
+			    left: 144px;
+			    background-size: 10px;
+			}
+			span.layred-circle{
+				width: 88px;
+			    height: 88px;
+			    background: url(../../images/circle-3-layer.png);
+			    background-size: cover;
+			    bottom: -10px;
+			    left: -112px;
+			    position: absolute;
+			}
+			.map-img{
+				width: 100%;
+				height: 588px;
+				background: url(../../images/map-img.png);
+				background-size: cover;
+			}
+			@include breakpoint(md){
+			    position: relative;
+			    width: 100%;
+			    margin-top: -90px;
+			    &:after{
+					bottom: -60px;
+					left: 30px;
+			    }
+			}
+		}
+	}
+}
+.more-contact-info{
+	li{
+	    display: inline-block;
+	    margin-bottom: 26px;
+	    min-width: 198px;
+	    @include breakpoint(md){
+	    	width: 100%;
+	    }
+		label{
+			color: #DFEEFD;
+			opacity: 0.3;
+			text-transform: uppercase;
+			font-size: 18px;
+			line-height: 30px;
+			display: block;
+			margin-bottom: -6px;
+			overflow: hidden;
+		}
+		& > span{
+			color: #F6F4FF;
+			font-size: 22px;
+			line-height: 44px;
+			overflow: hidden;
+		}
+	}
+}
+.page-template-contact{
+	.blue-jumbotron{
+		display: none;
+	}
+}
+.contact-wrapper{
+	.button.submit{
+		display: inline-block;
+		position: relative;
+		padding-right:57px !important;
+		.wpcf7-form-control[type="submit"]{
+			position: absolute;
+			left: 0px;
+			top: -1px;
+			right: 0px;
+			bottom: 0px;
+			background: none;
+			outline: none;
+			color: $darker_blue;
+			width: 100%;
+			padding: 0 37px;
+			font-size: 18px;
+			font-family: 'font-500';
+			font-weight: normal;
+			height: 56px;
+			line-height: 56px;
+		    @include border-radius(30px, 30px, 30px, 30px);
+		    transition: all 0.3s ease;
+	        &:hover {
+	        	background: transparent;
+	        	padding-left: 60px;
+	        }
+		}
+	}
+}
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
+	border: none;
+	padding: 0px;
+}
+
+span.wpcf7-not-valid-tip{
+	color: $white;
+	font-family: 'font-300';
+	font-size: 14px;
+}
+div.wpcf7-mail-sent-ok{
+	border-color: $light-green !important;
+	background: $light-green !important;
+	color: $darker_blue !important;
+	font-family: 'font-500';
+    text-align: center;
+}

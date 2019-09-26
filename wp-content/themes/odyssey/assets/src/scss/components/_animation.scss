@@ -1,0 +1,96 @@
+@keyframes zoomInZoomOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.8);
+        margin-left: 3px;
+    }
+    100% {
+        transform: scale(1);
+        margin-left: 0px;
+    }
+}
+@keyframes upsDown {
+    0% {
+        transform: translate(0, 0)
+    }
+    12.5% {
+        transform: translate(15px, 15px)
+    }
+    25% {
+        transform: translate(30px, 0)
+    }
+    37.5% {
+        transform: translate(45px, -15px)
+    }
+    50% {
+        transform: translate(60px, 0)
+    }
+    62.5% {
+        transform: translate(45px, -15px)
+    }
+    75% {
+        transform: translate(30px, 0)
+    }
+    87.5% {
+        transform: translate(15px, 15px)
+    }
+    100% {
+        transform: translate(0, 0)
+    }
+}
+@keyframes lineWidth{
+    0%{width: 0px;}
+    50%{width: 50px;}
+    100%{width: 0px;}
+}
+@keyframes animateUpward{
+    0%{transform: translateY(0px)}
+    50%{transform: translateY(-300px)}
+    100%{transform: translateY(0px)}
+}
+@keyframes zigZag {
+    0% {
+        transform: translate(0, 0)
+    }
+    12.5% {
+        transform: translate(15px, 15px)
+    }
+    25% {
+        transform: translate(30px, 0)
+    }
+    37.5% {
+        transform: translate(45px, -15px)
+    }
+    50% {
+        transform: translate(60px, 0)
+    }
+    62.5% {
+        transform: translate(45px, -15px)
+    }
+    75% {
+        transform: translate(30px, 0)
+    }
+    87.5% {
+        transform: translate(15px, 15px)
+    }
+    100% {
+        transform: translate(0, 0)
+    }
+}
+@keyframes goDown{
+    0%, 20%, 50%, 80%, 100%{
+        transform:translateY(0px);
+    }
+    40%{transform:translateY(-30px);}
+    60%{transform:translateY(-15px);}
+}
+
+@keyframes goRight{
+    0%, 20%, 50%, 80%, 100%{
+        transform:translateX(0px);
+    }
+    40%{transform:translateX(-30px);}
+    60%{transform:translateX(-15px);}
+}

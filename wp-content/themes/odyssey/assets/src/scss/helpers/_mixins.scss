@@ -1,0 +1,99 @@
+/*fonts start*/
+
+/*fonts end*/
+
+/*breakpoints start*/
+@mixin breakpoint($point) {
+  @if $point==xs {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } //screen320-480
+  @else if $point==xxs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+  @else if $point==sm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } //screen481-768
+  @else if $point==_sm {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @else if $point==md {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } //screen769-1024
+  @else if $point==dt {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } //screen1025-1280
+  @else if $point==lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } //screen1281+
+  @else if $point==lgr {
+    @media (min-width: 1441px) {
+      @content;
+
+    }
+  } //screen1281+
+  @else{
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+/*breakpoints end*/
+
+/*border radius start*/
+@mixin border-radius($topLeft, $topRight, $bottomRight, $bottomLeft){
+  border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  -moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  -webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+}
+/*border radius end*/
+
+/*box-shadow start*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+/*box-shadow end*/
+
+/*blur start*/
+@mixin blur($val){
+  filter: blur($val);
+  -moz-filter: blur($val);
+  -webkit-filter: blur($val);
+}
+/*blur radius end*/
+
+@mixin rotate($val){
+  -ms-transform: rotate($val); /* IE 9 */
+  -webkit-transform: rotate($val); /* Safari prior 9.0 */
+  transform: rotate($val); /* Standard syntax */
+}
+
+@mixin placeholder {
+  input::-webkit-input-placeholder {@content}
+  input::-moz-placeholder           {@content}
+  input::-moz-placeholder          {@content}
+  input::-ms-input-placeholder      {@content}  
+}
+
+

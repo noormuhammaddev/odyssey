@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_798" data-name="Group 798" transform="translate(-1547 -12147)">
+    <g id="Ellipse_96" data-name="Ellipse 96" transform="translate(1547 12147)" fill="none" stroke="#001157" stroke-width="1.5">
+      <circle cx="25" cy="25" r="25" stroke="none"/>
+      <circle cx="25" cy="25" r="24.25" fill="none"/>
+    </g>
+    <path id="chevron-left" d="M10.168,11.845a.288.288,0,0,0,0-.407L5.2,6.465l4.973-4.973a.288.288,0,1,0-.407-.407L4.585,6.262a.288.288,0,0,0,0,.407l5.177,5.177A.513.513,0,0,0,10.168,11.845Z" transform="translate(1563.653 12165.185)" fill="#001157" stroke="#001157" stroke-width="1"/>
+  </g>
+</svg>
